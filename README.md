@@ -4,9 +4,6 @@ This document outlines the requirements and implementation details for the small
 
 # Project Features
 
-
-Project Documentation
-# Requirements
 1. Home Page: The home page should include a menu, an image slider, and a list of profiles with photos and names.
 2. Login & Register & Forgot Password Page: These pages should allow users to login, register, and reset their password using email and password credentials.
 3. Dashboard: After logging in, users should be directed to a dashboard.
