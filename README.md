@@ -35,9 +35,9 @@ git clone Links:
 
 # Frontend
 
-Step 1.  move to frontend
-Step 2.  cd frontend 
-Step 3.  find this file AxiosInstance.js in frontend and  set the baseUrl= http://Localhost:8000
+1. move to frontend
+2. cd frontend 
+3. find this file AxiosInstance.js in frontend and  set the baseUrl= http://Localhost:8000
 
 - npm install
 - npm start
