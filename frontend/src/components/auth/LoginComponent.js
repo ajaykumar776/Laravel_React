@@ -64,7 +64,7 @@ const LoginComponent = () => {
                 </Button>
             </form>
             <Typography variant="body2" style={{ marginTop: 10 }}>
-                <Link href="/forgot-password">Forgot Password?</Link>
+                <Link href="/forgotpassword">Forgot Password?</Link>
                 <span style={{ margin: '0 10px' }}>&nbsp;</span>
                 <Link href="/register">Register</Link>
             </Typography>

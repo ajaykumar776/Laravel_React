@@ -6,7 +6,10 @@ use App\Http\Controllers\Apis\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Facade\FlareClient\Api;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -19,7 +22,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt.auth', ['except' => ['login', 'register']]);
+        $this->middleware('jwt.auth', ['except' => ['login', 'register', 'forgotPassword', 'updatePassword']]);
     }
 
     /**
@@ -153,5 +156,34 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60 * 24,
         ]);
+    }
+
+    public function forgotPassword($email)
+    {
+        $email = $email;
+        $user = User::where('email', $email)->first();
+        if ($user) {
+            return ApiResponse::success($user, "Valid Email");
+        } else {
+            return ApiResponse::error("Invalid Email");
+        }
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $user = User::where('email', $request->email)->first(); // Retrieve the user instance
+
+        if ($user) {
+            $user->password = Hash::make($request->password);
+            $user->save(); // Now you can call the save() method on the User model instance
+            return ApiResponse::success($user, "Updated password Successfully");
+        } else {
+            return ApiResponse::error("Failed to Update Password");
+        }
     }
 }

@@ -13,6 +13,7 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = "users";
     public function getJWTIdentifier()
     {
         return $this->getKey();

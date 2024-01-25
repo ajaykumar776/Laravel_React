@@ -22,6 +22,7 @@ const NonPrivateRoute = ({ element }) => {
 const routes = (
     <Routes>
         <Route path="/login" element={<NonPrivateRoute element={<AuthPage />} />} />
+        <Route path="/forgotpassword" element={<NonPrivateRoute element={<AuthPage />} />} />
         <Route path="/register" element={<NonPrivateRoute element={<AuthPage />} />} />
 
         <Route

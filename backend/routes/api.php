@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
+Route::get('/forgot-password/{email}', [AuthController::class, 'forgotPassword']);
+Route::post('/update-password', [AuthController::class, 'updatePassword']);
 
 Route::prefix('categories')->group(function () {
     Route::get('', [CategoryController::class, 'getAllCategories']);
