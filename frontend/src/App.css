@@ -1,0 +1,17 @@
+/* Override toastr styles to center notifications */
+#toast-container {
+    margin-top: 400px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+
+#toast-container>div {
+    width: auto;
+    margin: 0;
+    padding: 10px 15px;
+    margin-top: 400px;
+}
+
+.css-13cymwt-control {
+    min-height: 57px !important;
+}

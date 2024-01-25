@@ -1,0 +1,38 @@
+# Ignore vendor directory
+/vendor/
+
+# Ignore node_modules directory
+/node_modules/
+
+# Ignore .env file (contains sensitive configuration)
+/.env
+
+# Ignore any log files
+/storage/*.log
+
+# Ignore the public storage directory (where user uploads are stored)
+/public/storage/
+
+# Ignore the Homestead/Homestead.yaml file
+/Homestead.yaml
+
+# Ignore the Homestead/aliases file
+/Homestead.yaml
+
+# Ignore composer lock file
+/composer.lock
+
+# Ignore IDE configuration files
+/.idea/
+/.vscode/
+
+# Ignore compiled files
+/public/css/
+/public/js/
+/public/mix-manifest.json
+
+# Ignore any other files generated during development
+/.phpunit.result.cache
+/.phpunit.cache
+/phpunit.xml
+/nova
